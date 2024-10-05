@@ -1,0 +1,74 @@
+{
+  "name": "developermode",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "check": "tsc --noEmit && echo ✔ Ok",
+    "build": "tsc",
+    "dev": "tsx --env-file .env ./src/index.ts",
+    "dev:dev": "tsx --env-file .env.dev ./src/index.ts",
+    "watch": "tsx --watch --env-file .env ./src/index.ts",
+    "watch:dev": "tsx --watch --env-file .env.dev ./src/index.ts",
+    "start": "node --env-file .env ./build/index.js",
+    "start:dev": "node --env-file .env.dev ./build/index.js"
+  },
+  "dependencies": {
+    "@discord-player/extractor": "^4.5.1",
+    "@discordjs/voice": "^0.17.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@magicyan/discord": "^1.1.3",
+    "axios": "^1.7.7",
+    "chalk": "^5.3.0",
+    "consola": "^3.2.3",
+    "discord-html-transcripts": "^3.2.0",
+    "discord-player": "^6.7.1",
+    "discord-player-youtubei": "^1.3.1",
+    "discord-voip": "^0.1.3",
+    "discord.js": "^14.16.2",
+    "fast-glob": "^3.3.2",
+    "ip": "^2.0.1",
+    "mediaplex": "^0.0.9",
+    "mongoose": "^8.3.1",
+    "node-pre-gyp": "^0.17.0",
+    "npm": "^10.8.3",
+    "rebuild": "^0.1.2",
+    "sodium-native": "^4.1.1",
+    "stripe": "^16.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "ffmpeg-static": "^5.2.0",
+    "tsx": "4.8.0",
+    "typescript": "^5.5.3"
+  },
+  "imports": {
+    "#database": [
+      "./build/database/index.js"
+    ],
+    "#base": [
+      "./build/discord/base/index.js"
+    ],
+    "#functions": [
+      "./build/functions/index.js"
+    ],
+    "#menus": [
+      "./build/menus/index.js"
+    ],
+    "#settings": [
+      "./build/settings/index.js"
+    ],
+    "#tools": [
+      "./build/tools/index.js"
+    ],
+    "#server": [
+      "./build/server/index.js"
+    ],
+    "#lang/*": [
+      "./lang/*"
+    ]
+  }
+}
